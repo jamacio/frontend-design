@@ -1,64 +1,85 @@
 # Frontend Design — Super Design Agent
 
-Welcome to the self-contained design super agent. This `.github/` directory contains **all design knowledge, themes, craft rules, brands, and skills** from the Frontend Design project in a single place. Any AI agent (AI assistant, code agent, code editor, AI assistant, OpenCode, etc.) can use this directory as a complete reference for generating professional designs.
+A self-contained design workspace. This `.github/` directory holds **everything an AI agent needs** to generate production-grade frontends — craft rules, brand systems, tokens, templates, and 150+ functional skills. No external fetches. No cloud lock-in.
 
-## How any agent uses this super agent
+## How it works
 
-### 1. Entry point — `AGENTS.md`
+```
+1. Describe what you want — a landing page, a slide deck, a PDF report
+2. The agent reads AGENTS.md → applies craft rules → picks templates → generates
+3. Output lands in Projects/<name>/
+```
 
-Read `AGENTS.md` first. It contains the full index of everything available and navigation instructions.
+## Example prompts
 
-### 2. Design skills — `skills/`
+Try these with any AI agent connected to this workspace:
 
-Five compact markdown documents with all essential knowledge:
-
-| File | Contents |
+| You say… | What the agent does |
 |---|---|
-| `skills/DESIGN-SYSTEMS.md` | 152 design system architecture, 4-layer token schema (A1-identity, A1-structure, A2, B-slot), promotion path, starters |
-| `skills/CRAFT-RULES.md` | 10 universal craft rules: typography, color, anti-AI-slop, WCAG 2.2 AA accessibility, animation, states, forms, RTL, UX laws |
-| `skills/THEMES-TOKENS.md` | Web app CSS themes (Neutral Product Workspace), dark mode, motion tokens, Tailwind v4, Framer Motion |
-| `skills/DESIGN-TEMPLATES.md` | 112 template catalog organized by mode (prototype, deck, template, image, video, audio) |
-| `skills/BRAND-REFERENCES.md` | Complete 152 brand catalog with palettes, typography, and characteristics |
+| *"Build a modern website from my Instagram profile — extract the brand colors, logo, and vibe, then generate a landing page with matching sections and imagery."* | Reads `project-generator` skill → extracts brand identity from Instagram → applies `imagegen-frontend-web` for section images → uses `saas-landing` or `kami-landing` template → outputs to `Projects/<name>/` |
+| *"Create a website based on my Facebook page — pull the visual identity, generate a hero + features + testimonials layout, and ship a single HTML file."* | Reads `project-generator` skill → extracts brand from Facebook → runs `design-brief` to structure intent → uses `image-to-code` → picks `frontend-design-landing` or `saas-landing` → generates self-contained HTML |
+| *"Turn this brand into a PDF report — use the brand's colors and fonts, 15 pages with cover, table of contents, and body sections."* | Reads `pdf` or `minimax-pdf` skill → applies brand tokens → generates a multi-page PDF with cover, typography, and layout from the design system |
+| *"Make a slide deck / presentation for this project — Apple Keynote quality, horizontal swipe, with charts, quotes, and a closing CTA."* | Reads `ppt-keynote` or `frontend-slides` skill → uses `deck-swiss-international` or `kami-deck` template → generates a swipeable HTML deck or `.pptx` file |
 
-### 3. Design systems — `design-systems/`
+## What's inside
 
-152 folders, each with:
-- `DESIGN.md` — Canonical 9-section prose (theme, colors, typography, components, layout, depth, do's/don'ts, responsive, prompt guide)
-- `tokens.css` — CSS custom properties
-- `tailwind-v4.css` — Tailwind v4 @theme mapping
-- `manifest.json` — Design system metadata
-- `design-tokens.json` — Structured tokens (W3C DTC)
-- `components.html` — Component fixture
-- `preview/` — Color, typography, button, input previews
+### Design systems — 152 brands
 
-### 4. Craft rules — `craft/`
+```
+design-systems/<brand>/
+├── DESIGN.md           ← Full spec: theme, colors, typography, components, layout
+├── tokens.css           ← CSS custom properties
+├── tailwind-v4.css      ← Tailwind v4 @theme mapping
+├── components.html      ← Live component fixtures
+└── preview/             ← Visual preview pages
+```
 
-10 universal rule files any skill can require via `od.craft.requires`:
-- `typography.md`, `typography-hierarchy.md`, `typography-hierarchy-editorial.md`
-- `color.md`, `anti-ai-slop.md`
-- `accessibility-baseline.md`, `animation-discipline.md`
-- `state-coverage.md`, `form-validation.md`, `rtl-and-bidi.md`
-- `laws-of-ux.md`
+Apply any brand's identity in one step: `design-systems/airbnb/`, `design-systems/stripe/`, `design-systems/spotify/`, and 149 more.
 
-### 5. Design templates — `design-templates/`
+### Craft rules — 10 universal standards
 
-112 renderable templates for prototypes, decks, images, videos, and audio. Each has `SKILL.md` with full instructions.
+| Rule | What it enforces |
+|---|---|
+| `typography.md` | Scale, rhythm, hierarchy, measure |
+| `color.md` | Palette roles, contrast, accessibility |
+| `anti-ai-slop.md` | No generic gradients, no faux shadows, no stock UI |
+| `accessibility-baseline.md` | WCAG 2.2 AA minimum |
+| `animation-discipline.md` | Purposeful motion, reduced-motion respect |
+| `state-coverage.md` | Hover, focus, active, disabled, error, empty |
+| `form-validation.md` | Real-time feedback, error recovery |
+| `rtl-and-bidi.md` | Bidirectional layout support |
+| `laws-of-ux.md` | Jakob's Law, Hick's Law, Fitts's Law, etc. |
 
-### 6. Functional skills — `skills/` (157 subfolders)
+### Design templates — 112 rendering shapes
 
-Complete skills with `SKILL.md`, ready for any agent compatible with the skills protocol.
+- **Prototypes:** `saas-landing/`, `dashboard/`, `blog-post/`, `pricing-page/`, `mobile-app/`, `kanban-board/`
+- **Decks:** `html-ppt-*` (30+ themes), `kami-deck/`, `deck-swiss-international/`, `deck-guizang-editorial/`
+- **PDFs:** `pdf/`, `minimax-pdf/`
+- **Slides:** `slides/`, `pptx/`, `ppt-keynote/`, `frontend-slides/`
+
+### Functional skills — 150+ capabilities
+
+From image generation (`imagegen-frontend-web`, `fal-generate`) to design briefs, brand audits, copywriting, social cards, video templates, and device mockups.
 
 ## Agent workflow
 
 ```
-1. Read AGENTS.md → understand the structure
-2. Read skills/DESIGN-SYSTEMS.md → understand token architecture
-3. Read skills/CRAFT-RULES.md → learn craft rules
-4. For a specific brand: design-systems/<brand>/DESIGN.md
-5. For a specific template: design-templates/<template>/SKILL.md
-6. Apply craft/ rules on top of generated design
+1. Read AGENTS.md                       → understand the full structure
+2. Read skills/DESIGN-SYSTEMS.md        → token architecture
+3. Read skills/CRAFT-RULES.md            → design quality gates
+4. Read skills/DESIGN-TEMPLATES.md       → pick a template
+5. design-systems/<brand>/DESIGN.md      → apply brand identity
+6. design-templates/<template>/SKILL.md  → render the artifact
+7. Projects/<name>/                      → output lives here
 ```
 
-## License
+## How any agent connects
 
-Apache 2.0 — see `LICENSE`.
+Add this to your agent's instructions:
+
+```
+This project uses .github/ as its design knowledge base.
+Read .github/AGENTS.md before any design work.
+Craft rules at .github/craft/, skills at .github/skills/,
+design systems at .github/design-systems/.
+```
