@@ -1,0 +1,6 @@
+---
+description: Design super agent — craft rules, design systems, brand references, templates
+globs: *.css, *.html, *.jsx, *.tsx, *.svg, *.md
+---
+
+This project uses `.github/` as its design knowledge base. Read `.github/AGENTS.md` first. Apply craft rules from `.github/craft/`, use skills from `.github/skills/`, and reference design systems from `.github/design-systems/`.

@@ -1,0 +1,9 @@
+{
+  "experimental": {
+    "instructions": [
+      {
+        "file": ".github/AGENTS.md"
+      }
+    ]
+  }
+}

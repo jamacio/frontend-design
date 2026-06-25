@@ -1,0 +1,1 @@
+This project uses `.github/` as its design knowledge base. Before any design work, read `.github/AGENTS.md`. Apply craft rules from `.github/craft/`, use skills from `.github/skills/`, and reference design systems from `.github/design-systems/`.

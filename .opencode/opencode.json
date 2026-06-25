@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": {
+    "paths": [".github/skills"]
+  },
+  "references": {
+    "design": {
+      "path": ".github",
+      "description": "Design super agent with craft rules, design systems, brand references, and templates"
+    }
+  }
+}
